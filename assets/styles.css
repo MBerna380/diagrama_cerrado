@@ -1,0 +1,119 @@
+/* assets/styles.css */
+/* Estilos personalizados para o Diagrama do Cerrado */
+
+/* Animações suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Classes personalizadas */
+.cerrado-card {
+    animation: fadeIn 0.5s ease-out;
+    background: linear-gradient(145deg, #1e2a38, #16202d);
+    border-radius: 15px;
+    border: 1px solid #2e8b57;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cerrado-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+    border-color: #3cb371;
+}
+
+.cerrado-metric {
+    background: linear-gradient(135deg, #2e8b57 0%, #228b22 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+.cerrado-header {
+    background: linear-gradient(90deg, #0c3b2e 0%, #2e8b57 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cerrado-badge {
+    display: inline-block;
+    background: #2e8b57;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cerrado-progress {
+    height: 10px;
+    border-radius: 5px;
+    background: #1a1a1a;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.cerrado-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2e8b57, #3cb371);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+/* Tooltips personalizados */
+.cerrado-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.cerrado-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #2e8b57;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.cerrado-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cerrado-card {
+        padding: 1rem;
+    }
+    
+    .cerrado-header {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
